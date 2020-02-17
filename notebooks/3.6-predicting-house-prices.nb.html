@@ -326,7 +326,7 @@ for (i in 1:k) {
                 
   # Evaluate the model on the validation data
   results &lt;- model %&gt;% evaluate(val_data, val_targets, verbose = 0)
-  all_scores &lt;- c(all_scores, results$mean_absolute_error)
+  all_scores &lt;- c(all_scores, results$mae)
 }  </code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
@@ -387,7 +387,7 @@ for (i in 1:k) {
     validation_data = list(val_data, val_targets),
     epochs = num_epochs, batch_size = 1, verbose = 0
   )
-  mae_history &lt;- history$metrics$val_mean_absolute_error
+  mae_history &lt;- history$metrics$val_mae
   all_mae_histories &lt;- rbind(all_mae_histories, mae_history)
 }</code></pre>
 <!-- rnb-source-end -->
