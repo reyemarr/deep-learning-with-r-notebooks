@@ -191,7 +191,7 @@ for (i in 1:k) {
     validation_data = list(val_data, val_targets),
     epochs = num_epochs, batch_size = 1, verbose = 0
   )
-  mae_history <- history$metrics$val_mean_absolute_error
+  mae_history <- history$metrics$val_mae
   all_mae_histories <- rbind(all_mae_histories, mae_history)
 }
 ```
